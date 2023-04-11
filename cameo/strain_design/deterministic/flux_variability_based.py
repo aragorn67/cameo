@@ -1021,7 +1021,7 @@ class FSEOFResult(StrainDesignMethodResult):
                     if value[i] == 0:
                         targets.append(ReactionKnockoutTarget(reaction))
                     elif value[i] > reference[reaction]:
-                        targets.append(ReactionModulationTarget(reaction, value[i], reference[reaction.id]))
+                        targets.append(ReactionModulationTarget(reaction, value[i], reference[reaction]))
 
             yield StrainDesign(targets)
 
