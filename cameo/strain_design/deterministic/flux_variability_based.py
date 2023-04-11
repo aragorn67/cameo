@@ -1017,11 +1017,11 @@ class FSEOFResult(StrainDesignMethodResult):
         for i, level in enumerate(enforced_levels):
             targets = []
             for reaction, value in reaction_results.items():
-                if abs(reference[reaction.id]) > 0:
+                if abs(reference[reaction]) > 0:
                     if value[i] == 0:
-                        targets.append(ReactionKnockoutTarget(reaction.id))
-                    elif value[i] > reference[reaction.id]:
-                        targets.append(ReactionModulationTarget(reaction.id, value[i], reference[reaction.id]))
+                        targets.append(ReactionKnockoutTarget(reaction))
+                    elif value[i] > reference[reaction]:
+                        targets.append(ReactionModulationTarget(reaction, value[i], reference[reaction.id]))
 
             yield StrainDesign(targets)
 
