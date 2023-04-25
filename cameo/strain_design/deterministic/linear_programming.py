@@ -718,7 +718,8 @@ class GrowthCouplingPotential(StrainDesignMethod):
 
             if pool_time_limit is not None:
                 self.model.solver.problem.params.TimeLimit = pool_time_limit
-
+                
+        # This is a <class 'optlang.gurobi_interface.Model'>
         sol = self.model.optimize()
 
         if self.use_solution_pool:
